@@ -1,0 +1,108 @@
+.body {
+  background-image: linear-gradient(to right, #2a2652, #3b9ae1);
+}
+.template2PreviewContainer {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 60px;
+}
+
+.profileTemplate2PreviewImg {
+  width: 120px;
+  height: 120px;
+  background-color: rebeccapurple;
+  border-radius: 50%;
+}
+
+.profileTemplate2PreviewData {
+  margin-left: 30px;
+  color: white;
+}
+
+.profile2PreviewHeading {
+  font-style: normal;
+
+  text-rendering: optimizeLegibility;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile2PreviewHeading input {
+  font-style: normal;
+  background-color: transparent;
+  border: 0.5px solid black;
+  width: 100%;
+  text-rendering: optimizeLegibility;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile2PreviewInfo {
+  font-style: normal;
+
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+.profile2PreviewInfo input {
+  font-style: normal;
+  background-color: transparent;
+  border: 0.5px solid black;
+  width: 100%;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.template2PreviewMenu {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.template2PreviewMenu ul {
+  display: flex;
+}
+.menuItems2Preview {
+  margin-left: 100px;
+}
+
+.menuItems2Preview li {
+  list-style-type: none;
+  margin-right: 100px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+}
+
+.hover-underline-animation2 {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.hover-underline-animation2:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation2:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

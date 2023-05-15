@@ -1,0 +1,115 @@
+:root {
+  --blue-color: #1c3f7d;
+  --moredarkblue-color: #081d4e;
+  --darkblue-color: #112b57;
+  --roboto-font: "Roboto", sans-serif;
+  --input-bg-color: #ffffff;
+  --primary-button-color: #4a90e2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--roboto-font);
+}
+
+.login_main {
+  background-color: var(--blue-color);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login_text {
+  text-align: center;
+  font-family: var(--roboto-font);
+  font-weight: 900;
+  font-size: 3rem;
+  color: var(--moredarkblue-color);
+  margin-bottom: 2rem;
+}
+
+.login_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--input-bg-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input_box {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.input_title {
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.login_container input {
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 10px;
+  font-family: var(--roboto-font);
+}
+
+.login_container input::placeholder {
+  color: gray;
+  opacity: 0.6;
+  font-family: var(--roboto-font);
+}
+
+.login_container button {
+  width: 100%;
+  height: 2.5rem;
+  margin-top: 1rem;
+  border: none;
+  background-color: var(--primary-button-color);
+  border-radius: 4px;
+  font-family: var(--roboto-font);
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login_container button:hover {
+  background-color: darken(var(--primary-button-color), 10%);
+  color: var(--primary-button-color);
+}
+
+.login_container p {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.login_container a {
+  color: var(--moredarkblue-color);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.login_container a:hover {
+  color: var(--darkblue-color);
+}

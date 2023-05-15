@@ -1,0 +1,31 @@
+.tableWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.customTable {
+  border-collapse: collapse;
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.customTable th,
+.customTable td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.customTable th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.customTable tbody tr:nth-child(even) {
+  background-color: #f8f8f8;
+}

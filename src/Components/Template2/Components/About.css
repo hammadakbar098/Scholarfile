@@ -1,0 +1,304 @@
+.blur {
+  filter: blur(1.6px);
+}
+.childComponent {
+  width: 100%;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #222222;
+  margin-bottom: 1rem;
+}
+.childComponent textarea {
+  width: 100%;
+  font-weight: 400;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border-color: white;
+}
+
+.childComponentHeading {
+  font-weight: 500;
+  font-size: 2rem;
+
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.childComponentInfo {
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: #222222;
+  margin-bottom: 1rem;
+}
+.childComponentInfo input {
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: white;
+  margin-bottom: 1rem;
+  width: 50%;
+  background-color: transparent;
+  border: 0.1;
+  border-color: white;
+}
+.childComponentSeparator {
+  width: 100%;
+  height: 1px;
+  background-color: #c4c4c4;
+  margin-bottom: 1rem;
+}
+
+/* About */
+.aboutBiography {
+  margin-bottom: 2rem;
+}
+
+.aboutContact {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.aboutPostalAddress {
+  margin-top: 2rem;
+}
+
+/* Lab */
+.labDetails {
+  margin-bottom: 2rem;
+}
+
+/* Network */
+.networkMembers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.networkMember {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: 150px; */
+  margin-right: 30px;
+}
+
+.networkMemberImage {
+  width: 80px;
+  height: 80px;
+  background-color: rebeccapurple;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* Profile */
+.profileMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profileMenuItem {
+  text-decoration: none;
+  color: #222222;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-size: 1.2rem;
+}
+
+.profileMenuItem:hover {
+  color: #0087ca;
+}
+.aboutContainer {
+  background-color: #495c83;
+  width: 50%;
+  margin: 0 auto;
+  padding: 50px;
+  box-shadow: 0px 0px 5px 3px #6f7c98;
+  border: 5px solid #505f7c;
+}
+
+.labContainer {
+  background-color: #495c83;
+  width: 50%;
+  margin: 0 auto;
+  padding: 50px;
+  box-shadow: 0px 0px 5px 3px #6f7c98;
+  border: 5px solid #505f7c;
+}
+
+.networkcontainer {
+  background-color: #495c83;
+  width: 50%;
+  margin: 0 auto;
+  padding: 50px;
+  box-shadow: 0px 0px 5px 3px #6f7c98;
+  border: 5px solid #505f7c;
+}
+
+.profileContainer {
+  background-color: #495c83;
+  width: 50%;
+  margin: 0 auto;
+  padding: 50px;
+  box-shadow: 0px 0px 5px 3px #6f7c98;
+  border: 5px solid #505f7c;
+}
+.alignMembersCollab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.marginTopEditTemplate1 {
+  /* position: absolute;
+  top: 0;
+  z-index: 999999; */
+}
+
+.memberAddModal {
+  width: 50%;
+  height: 400px;
+  background-color: lightblue;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  margin-left: 25%;
+  margin-top: 130px;
+}
+.closeIcon1 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.memberAddChild {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: absolute;
+  /* top: 100%; */
+  bottom: 60px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+}
+
+.closeIcon1 {
+  /* text-align: right; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.addMemberArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.addMemberInfo {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.addMemberInfo input {
+  border: none;
+  border-bottom: 1px solid #cccccc;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.addMemberImg {
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.savebtn {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.savebtn button {
+  background-color: #1e90ff;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.addMemberImg input {
+  width: 90%;
+}
+.addMemberImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.data1Img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.m-rMembers {
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.marginTopEditTemplate1 {
+  /* margin-top: 300px; */
+}
+.save-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: lightblue;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-left: 45px;
+  margin-top: 10px;
+}
+
+.networkMemberImage img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.btnSave {
+  background-color: #2f80ed;
+  border: none;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 10px;
+}
+.btnSave:hover {
+  background-color: #4a98f0;
+}

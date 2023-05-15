@@ -1,0 +1,103 @@
+.templateSelectOverlay {
+  /* filter: blur(2px); */
+  /* z-index: -999999; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  align-items: center;
+}
+.templateSelectContainer {
+  width: 80%;
+  height: 80vh;
+  background-color: white;
+  /* z-index: 1; */
+  border-radius: 10px;
+
+  /* margin-bottom: 50px; */
+}
+.templateSelectContainer {
+}
+.templateGrayContainer {
+  width: 97%;
+  height: 95%;
+  background-color: gray;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 17px;
+}
+.templateSelectContainer p {
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
+  /* margin-top: 20px; */
+  letter-spacing: 1.5px;
+}
+.templateDesign {
+  width: 300px;
+  height: 80%;
+  border-radius: 10px;
+  background-color: darkgray;
+  margin: 0 60px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.containerTemplate {
+  width: 100%;
+}
+.templateBox1 {
+  width: 80%;
+  height: 15%;
+  background-color: gray;
+  border-radius: 10px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+.templateBox11 {
+  width: 80%;
+  height: 35%;
+  background-color: gray;
+  border-radius: 10px;
+}
+.templateBoxRound {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: gray;
+}
+.templateBoxSquare {
+  width: 180px;
+  height: 50px;
+  background-color: gray;
+  margin-left: 20px;
+}
+.templateBox2 {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.templateDesignBox {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 50px;
+}
+.alignPreview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+.alignPreview p {
+  font-weight: 600;
+}
