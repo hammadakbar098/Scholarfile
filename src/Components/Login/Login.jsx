@@ -6,15 +6,16 @@ import { login } from "../../axios/Axios";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const antd = window.antd;
-  const onFinish = (values) => {
-    console.log("Success:", values);
-  };
-
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
-  };
   const navigate = useNavigate();
+
+  const getTempId = async () => {
+    try {
+      var template_type = sessionStorage.getItem("template_type");
+      return template_type;
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,9 +23,14 @@ const Login = () => {
   const handleLogin = async () => {
     var data = await login(email, password);
     if (data?.error === false) {
-      //
-      // console.log(data.data.token);
-      navigate("/template1");
+      if (data?.data.template_type === "1") {
+        navigate("/template1");
+      } else if (data?.data.template_type === "2") {
+        navigate("/template2");
+      }
+    }
+    if (data?.error === true) {
+      alert(data?.message);
     }
   };
   const handleSignup = () => {

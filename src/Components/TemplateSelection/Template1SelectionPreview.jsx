@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import TableComponent from "../Modal/TableComponent";
+import { NavBar } from "../NavBar/NavBar";
 
 export const Template1SelectionPreview = () => {
   const [view, setView] = useState(false);
@@ -24,6 +25,7 @@ export const Template1SelectionPreview = () => {
 
   return (
     <>
+      <NavBar />
       <div className={view ? "blurr" : "bgGradient"}>
         <p
           style={{

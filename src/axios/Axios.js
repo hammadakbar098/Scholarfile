@@ -24,6 +24,15 @@ const getuserId = async () => {
   }
 };
 
+const getTemplateSetId = async () => {
+  try {
+    var userId = sessionStorage.getItem("id");
+    return userId;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 export const signup = async (
   email,
   password,
@@ -56,6 +65,7 @@ export const signup = async (
     .then(function (response) {
       console.log(JSON.stringify(response.data));
       apiResponse = response.data;
+      sessionStorage.setItem("id", JSON.stringify(apiResponse.data.id));
     })
     .catch(function (error) {
       console.log(error);
@@ -83,6 +93,7 @@ export const login = async (email, password) => {
       apiResponse = response.data;
       tokenValue = JSON.stringify(apiResponse.data.token);
       sessionStorage.setItem("token", tokenValue);
+      sessionStorage.setItem("template_type", response.data.template_type);
     })
     .catch(function (error) {
       console.log(error);
@@ -323,7 +334,7 @@ export const getCollabrators = async () => {
 };
 
 export const selectTemplateType = async (type) => {
-  var data = { user_id: await getuserId(), template_type: type };
+  var data = { user_id: await getTemplateSetId(), template_type: type };
 
   var config = {
     method: "post",

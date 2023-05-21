@@ -6,6 +6,7 @@ import { Network } from "./Network";
 import { Profile } from "./Profile";
 import { getProfile, getCollabrators } from "../../axios/Axios";
 import { useNavigate } from "react-router-dom";
+import { NavBar } from "../NavBar/NavBar";
 
 export const Template2SelectionPreview = () => {
   const [collabrators, setCollabrators] = useState([]);
@@ -59,6 +60,7 @@ export const Template2SelectionPreview = () => {
 
   return (
     <>
+      <NavBar />
       <div className="body">
         <p
           style={{

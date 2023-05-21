@@ -16,9 +16,9 @@ const Signup = () => {
   const [organization, setOrganization] = useState("");
   const [designation, setDesignation] = useState("");
 
-  const handleSignup = () => {
+  const handleSignup = async () => {
     if (password === confirmPassword) {
-      signup(
+      let res = await signup(
         email,
         password,
         firstName,
@@ -27,6 +27,11 @@ const Signup = () => {
         phone,
         designation
       );
+
+      if (res.error === false) {
+        // navigate("/template-select");
+        navigate("/");
+      }
     } else {
       alert("Password and confirm password is not same");
     }

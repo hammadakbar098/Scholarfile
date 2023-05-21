@@ -10,6 +10,7 @@ import { Network } from "./Components/Network";
 import { Profile } from "./Components/Profile";
 import { useLocation } from "react-router-dom";
 import { profileData, getProfile, userBio } from "../../axios/Axios";
+import { NavBar } from "../NavBar/NavBar";
 
 export const Template2Edit = ({ props }) => {
   const location = useLocation();
@@ -65,6 +66,7 @@ export const Template2Edit = ({ props }) => {
 
   return (
     <>
+      <NavBar />
       <div className="body">
         <p
           style={{

@@ -10,13 +10,13 @@ import { TemplateSelection } from "./Components/TemplateSelection/TemplateSelect
 import TableComponent from "./Components/Modal/TableComponent";
 import { Template1SelectionPreview } from "./Components/TemplateSelection/Template1SelectionPreview";
 import { Template2SelectionPreview } from "./Components/TemplateSelection/Template2SelectionPreview";
-import { useEffect } from "react";
-import InputForm from "./Components/Modal/InputForm";
+// import InputForm from "./Components/Modal/InputForm";
+// import { NavBar } from "./Components/NavBar/NavBar";
 
 function App() {
-  useEffect(() => {}, []);
   return (
     <>
+      {/* <NavBar /> */}
       {/* <Template1Preview /> */}
       {/* <Template1Edit /> */}
       {/* <Template2Preview /> */}

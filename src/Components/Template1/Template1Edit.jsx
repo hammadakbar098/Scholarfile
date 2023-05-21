@@ -11,6 +11,7 @@ import {
 } from "../../axios/Axios";
 import { useLocation } from "react-router-dom";
 import InputForm from "../Modal/InputForm";
+import { NavBar } from "../NavBar/NavBar";
 
 export const Template1Edit = ({ props }) => {
   const navigate = useNavigate();
@@ -188,6 +189,7 @@ export const Template1Edit = ({ props }) => {
 
   return (
     <>
+      <NavBar />
       <div className={blur ? "blur" : null} style={{ backgroundColor: color }}>
         <p
           style={{
