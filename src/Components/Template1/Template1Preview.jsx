@@ -12,10 +12,14 @@ import { NavBar } from "./../NavBar/NavBar";
 export const Template1Preview = () => {
   const [view, setView] = useState(false);
   const [heading, setHeading] = useState("");
-  const handleSidebar = (e, text) => {
+  const [fun, setFun] = useState();
+  const [tkncheck, setTknCheck] = useState(false);
+
+  const handleSidebar = (e, text, funCall) => {
     e.preventDefault();
     setView(!view);
     setHeading(text);
+    setFun(funCall);
   };
   //
   const handleNavigate = (e) => {
@@ -43,8 +47,30 @@ export const Template1Preview = () => {
     setCollabrators(collab.data);
   };
 
+  const getToken = async () => {
+    try {
+      var tkn = sessionStorage.getItem("token");
+      var tknParse = JSON.parse(tkn);
+
+      return tknParse;
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   useEffect(() => {
     apiCall();
+
+    // const tkn = async () => {
+    //   let token = await getToken();
+    //   if (token === null || token === undefined) {
+    //     setTknCheck(true);
+    //   }
+    // };
+    // tkn();
+    // if (tkncheck === true) {
+    //   navigate("/");
+    // }
   }, []);
   return (
     <>
@@ -149,28 +175,28 @@ export const Template1Preview = () => {
               <ul>
                 <a
                   onClick={(e) => {
-                    handleSidebar(e, "Edu Information");
+                    handleSidebar(e, "Edu Information", 1);
                   }}
                 >
                   Edu information
                 </a>
                 <a
                   onClick={(e) => {
-                    handleSidebar(e, "Academin Exp");
+                    handleSidebar(e, "Academin Exp", 2);
                   }}
                 >
                   Academic exp
                 </a>
                 <a
                   onClick={(e) => {
-                    handleSidebar(e, "Award");
+                    handleSidebar(e, "Award", 3);
                   }}
                 >
                   Award
                 </a>
                 <a
                   onClick={(e) => {
-                    handleSidebar(e, "Achievements");
+                    handleSidebar(e, "Achievements", 4);
                   }}
                 >
                   Achievements
@@ -191,7 +217,7 @@ export const Template1Preview = () => {
                 </a>
                 <a
                   onClick={(e) => {
-                    handleSidebar(e, "Job openings");
+                    handleSidebar(e, "Job openings", 7);
                   }}
                 >
                   Job openings
@@ -205,7 +231,7 @@ export const Template1Preview = () => {
                 </a>
                 <a
                   onClick={(e) => {
-                    handleSidebar(e, "Funding");
+                    handleSidebar(e, "Funding", 9);
                   }}
                 >
                   Funding
@@ -234,7 +260,7 @@ export const Template1Preview = () => {
               }}
             />
 
-            <TableComponent />
+            <TableComponent apiCheck={fun} />
           </div>
         </div>
       )}

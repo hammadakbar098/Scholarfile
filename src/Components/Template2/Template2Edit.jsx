@@ -8,12 +8,13 @@ import { About } from "./Components/About";
 import { Lab } from "./Components/Lab";
 import { Network } from "./Components/Network";
 import { Profile } from "./Components/Profile";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { profileData, getProfile, userBio } from "../../axios/Axios";
 import { NavBar } from "../NavBar/NavBar";
 
 export const Template2Edit = ({ props }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { namee, designationn, institutee, contactt, bioo, addresss, labb } =
     location.state;
   const [about, setAbout] = useState(true);
@@ -28,6 +29,7 @@ export const Template2Edit = ({ props }) => {
 
   const handleData = async () => {
     userBio(designation, institute, name);
+    navigate("/template2");
   };
 
   const getProfileData = async () => {

@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { RiCloseLine, RiSaveLine } from "react-icons/ri";
 import "./InputForm.css";
+import {
+  createEducation,
+  createAcademicExp,
+  createAwards,
+  createAchievements,
+  createJobs,
+  createFunding,
+} from "../../axios/Axios";
 
 const InputForm = ({ handleClose, handleSave, type }) => {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [title, setTitle] = useState("");
-  const [detail, setDetail] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleFromChange = (event) => {
     setFrom(event.target.value);
@@ -21,12 +29,24 @@ const InputForm = ({ handleClose, handleSave, type }) => {
   };
 
   const handleDetailChange = (event) => {
-    setDetail(event.target.value);
+    setDescription(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleSave(from, to, title, detail);
+    if (handleSave === "1") {
+      createEducation(from, to, title, description);
+    } else if (handleSave === "2") {
+      createAcademicExp(from, to, title, description);
+    } else if (handleSave === "3") {
+      createAwards(from, to, title, description);
+    } else if (handleSave === "4") {
+      createAchievements(from, to, title, description);
+    } else if (handleSave === "7") {
+      createJobs(from, to, title, description);
+    } else if (handleSave === "9") {
+      createFunding(from, to, title, description);
+    }
     handleClose();
   };
 
@@ -84,7 +104,7 @@ const InputForm = ({ handleClose, handleSave, type }) => {
             <textarea
               className="text-area-field"
               id="detail-input"
-              value={detail}
+              value={description}
               onChange={handleDetailChange}
             />
           </div>

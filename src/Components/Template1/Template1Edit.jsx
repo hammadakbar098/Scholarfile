@@ -53,6 +53,7 @@ export const Template1Edit = ({ props }) => {
   const [collabs, setCollabs] = useState(false);
   const [funds, setFunds] = useState(false);
   const [blur, setBlur] = useState(false);
+  const [fun, setFun] = useState();
 
   const handleEduInfo = () => {
     setEdu(!edu);
@@ -65,6 +66,7 @@ export const Template1Edit = ({ props }) => {
     setCollabs(false);
     setFunds(false);
     setBlur(!blur);
+    setFun(1);
   };
   const handleAcd = () => {
     setEdu(false);
@@ -423,35 +425,67 @@ export const Template1Edit = ({ props }) => {
         )}
       </div>
       {edu && (
-        <InputForm handleClose={handleEduInfo} type="Educational Information" />
+        <InputForm
+          handleClose={handleEduInfo}
+          type="Educational Information"
+          handleSave="1"
+        />
       )}
       {acad && (
-        <InputForm handleClose={handleAcd} type="Academic Information" />
+        <InputForm
+          handleClose={handleAcd}
+          type="Academic Information"
+          handleSave="2"
+        />
       )}
       {awards && (
-        <InputForm handleClose={handleAward} type="Awards Information" />
+        <InputForm
+          handleClose={handleAward}
+          type="Awards Information"
+          handleSave="3"
+        />
       )}
       {achievements && (
         <InputForm
           handleClose={handleAchievements}
           type="Achievements Information"
+          handleSave="4"
         />
       )}
       {blogs && (
-        <InputForm handleClose={handleBlogs} type="Blogs Information" />
+        <InputForm
+          handleClose={handleBlogs}
+          type="Blogs Information"
+          handleSave="5"
+        />
       )}
       {pictures && (
-        <InputForm handleClose={handlePictures} type="Pictures Information" />
+        <InputForm
+          handleClose={handlePictures}
+          type="Pictures Information"
+          handleSave="6"
+        />
       )}
-      {jobs && <InputForm handleClose={handleJobs} type="Jobs Information" />}
+      {jobs && (
+        <InputForm
+          handleClose={handleJobs}
+          type="Jobs Information"
+          handleSave="7"
+        />
+      )}
       {collabs && (
         <InputForm
           handleClose={handleCollabs}
           type="Collabrations Information"
+          handleSave="8"
         />
       )}
       {funds && (
-        <InputForm handleClose={handleFunds} type="Funds Information" />
+        <InputForm
+          handleClose={handleFunds}
+          type="Funds Information"
+          handleSave="9"
+        />
       )}
     </>
   );

@@ -24,11 +24,12 @@ export const NetworkEdit = () => {
   const addMembers = async () => {
     let res = await handleAddMembers(memberName, role, imageFile);
     setUploadData(res.error);
+    setShowAdd(false);
   };
 
   useEffect(() => {
     apiCall();
-  }, []);
+  });
   return (
     <>
       <div className={showAdd ? "networkcontainer blur" : "networkcontainer"}>

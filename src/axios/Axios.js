@@ -352,3 +352,344 @@ export const selectTemplateType = async (type) => {
       console.log(error);
     });
 };
+
+// Create Education
+export const createEducation = async (from, to, title, description) => {
+  var response;
+  var data = {
+    title: title,
+    description: description,
+    _from: from,
+    _to: to,
+  };
+
+  var config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: `${baseURL}users/education/`,
+    headers: {
+      Authorization: await getToken(),
+    },
+    data: data,
+  };
+
+  await axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      response = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  return response;
+};
+
+// Create Academic Exp
+export const createAcademicExp = async (from, to, title, description) => {
+  var response;
+  var data = {
+    title: title,
+    description: description,
+    _from: from,
+    _to: to,
+  };
+
+  var config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: `${baseURL}users/academic/`,
+    headers: {
+      Authorization: await getToken(),
+    },
+    data: data,
+  };
+
+  await axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      response = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  return response;
+};
+
+// Create Awards
+export const createAwards = async (from, to, title, description) => {
+  var response;
+  var data = {
+    title: title,
+    description: description,
+    _from: from,
+    _to: to,
+  };
+
+  var config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: `${baseURL}users/awards/`,
+    headers: {
+      Authorization: await getToken(),
+    },
+    data: data,
+  };
+
+  await axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      response = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  return response;
+};
+
+// Create Achievments
+export const createAchievements = async (from, to, title, description) => {
+  var response;
+  var data = {
+    title: title,
+    description: description,
+    _from: from,
+    _to: to,
+  };
+
+  var config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: `${baseURL}users/achievement/`,
+    headers: {
+      Authorization: await getToken(),
+    },
+    data: data,
+  };
+
+  await axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      response = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  return response;
+};
+
+// Create Job openings
+export const createJobs = async (from, to, title, description) => {
+  var response;
+  var data = {
+    title: title,
+    description: description,
+    _from: from,
+    _to: to,
+  };
+
+  var config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: `${baseURL}users/job/`,
+    headers: {
+      Authorization: await getToken(),
+    },
+    data: data,
+  };
+
+  await axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      response = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  return response;
+};
+
+// Create Fundings
+export const createFunding = async (from, to, title, description) => {
+  var response;
+  var data = {
+    title: title,
+    description: description,
+    _from: from,
+    _to: to,
+  };
+
+  var config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: `${baseURL}users/funding/`,
+    headers: {
+      Authorization: await getToken(),
+    },
+    data: data,
+  };
+
+  await axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      response = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  return response;
+};
+
+// Get Education
+export const getEducation = async () => {
+  var res;
+  var data = "";
+
+  var config = {
+    method: "get",
+    maxBodyLength: Infinity,
+    url: `${baseURL}users/education/`,
+    headers: {
+      Authorization: await getToken(),
+    },
+    data: data,
+  };
+
+  await axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      res = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  return res;
+};
+
+// Get Education
+export const getAcademic = async () => {
+  var res;
+  var data = "";
+
+  var config = {
+    method: "get",
+    maxBodyLength: Infinity,
+    url: `${baseURL}users/academic/`,
+    headers: {
+      Authorization: await getToken(),
+    },
+    data: data,
+  };
+
+  await axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      res = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  return res;
+};
+
+// Get awards
+export const getAwards = async () => {
+  var res;
+  var data = "";
+
+  var config = {
+    method: "get",
+    maxBodyLength: Infinity,
+    url: `${baseURL}users/awards/`,
+    headers: {
+      Authorization: await getToken(),
+    },
+    data: data,
+  };
+
+  await axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      res = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  return res;
+};
+
+// Get achievements
+export const getAchievements = async () => {
+  var res;
+  var data = "";
+
+  var config = {
+    method: "get",
+    maxBodyLength: Infinity,
+    url: `${baseURL}users/achievement/`,
+    headers: {
+      Authorization: await getToken(),
+    },
+    data: data,
+  };
+
+  await axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      res = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  return res;
+};
+
+// Get jobs
+export const getJobs = async () => {
+  var res;
+  var data = "";
+
+  var config = {
+    method: "get",
+    maxBodyLength: Infinity,
+    url: `${baseURL}users/job/`,
+    headers: {
+      Authorization: await getToken(),
+    },
+    data: data,
+  };
+
+  await axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      res = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  return res;
+};
+// Get fundings
+export const getFundings = async () => {
+  var res;
+  var data = "";
+
+  var config = {
+    method: "get",
+    maxBodyLength: Infinity,
+    url: `${baseURL}users/funding/`,
+    headers: {
+      Authorization: await getToken(),
+    },
+    data: data,
+  };
+
+  await axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      res = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  return res;
+};

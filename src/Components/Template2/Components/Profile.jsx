@@ -5,10 +5,13 @@ import TableComponent from "../../Modal/TableComponent";
 export const Profile = () => {
   const [view, setView] = useState(false);
   const [heading, setHeading] = useState("");
-  const handleSidebar = (e, text) => {
+  const [fun, setFun] = useState();
+
+  const handleSidebar = (e, text, funCall) => {
     e.preventDefault();
     setView(!view);
     setHeading(text);
+    setFun(funCall);
   };
   return (
     <>
@@ -18,7 +21,7 @@ export const Profile = () => {
           <ul>
             <li
               onClick={(e) => {
-                handleSidebar(e, "Edu Information");
+                handleSidebar(e, "Edu Information", 1);
               }}
               className="profileMenuItem"
             >
@@ -26,7 +29,7 @@ export const Profile = () => {
             </li>
             <li
               onClick={(e) => {
-                handleSidebar(e, "Academin Exp");
+                handleSidebar(e, "Academin Exp", 2);
               }}
               className="profileMenuItem"
             >
@@ -34,7 +37,7 @@ export const Profile = () => {
             </li>
             <li
               onClick={(e) => {
-                handleSidebar(e, "Award");
+                handleSidebar(e, "Award", 3);
               }}
               className="profileMenuItem"
             >
@@ -42,7 +45,7 @@ export const Profile = () => {
             </li>
             <li
               onClick={(e) => {
-                handleSidebar(e, "Achievements");
+                handleSidebar(e, "Achievements", 4);
               }}
               className="profileMenuItem"
             >
@@ -50,7 +53,7 @@ export const Profile = () => {
             </li>
             <li
               onClick={(e) => {
-                handleSidebar(e, "Blogs");
+                handleSidebar(e, "Blogs", 5);
               }}
               className="profileMenuItem"
             >
@@ -58,7 +61,7 @@ export const Profile = () => {
             </li>
             <li
               onClick={(e) => {
-                handleSidebar(e, "Pictures");
+                handleSidebar(e, "Pictures", 6);
               }}
               className="profileMenuItem"
             >
@@ -66,7 +69,7 @@ export const Profile = () => {
             </li>
             <li
               onClick={(e) => {
-                handleSidebar(e, "Job openings");
+                handleSidebar(e, "Job openings", 7);
               }}
               className="profileMenuItem"
             >
@@ -74,7 +77,7 @@ export const Profile = () => {
             </li>
             <li
               onClick={(e) => {
-                handleSidebar(e, "Collabration");
+                handleSidebar(e, "Collabration", 8);
               }}
               className="profileMenuItem"
             >
@@ -82,7 +85,7 @@ export const Profile = () => {
             </li>
             <li
               onClick={(e) => {
-                handleSidebar(e, "Funding");
+                handleSidebar(e, "Funding", 9);
               }}
               className="profileMenuItem"
             >
@@ -94,7 +97,7 @@ export const Profile = () => {
       <div style={{ height: 10, marginTop: 20 }}></div>
       {view && (
         <div className="alignModal">
-          <div className="modalComponent">
+          <div className="modalComponent" style={{ marginTop: "330px" }}>
             <p>{heading}</p>
 
             <AiOutlineCloseCircle
@@ -111,7 +114,7 @@ export const Profile = () => {
               }}
             />
 
-            <TableComponent />
+            <TableComponent apiCheck={fun} />
           </div>
         </div>
       )}
