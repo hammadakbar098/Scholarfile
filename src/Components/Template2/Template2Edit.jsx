@@ -15,8 +15,15 @@ import { NavBar } from "../NavBar/NavBar";
 export const Template2Edit = ({ props }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { namee, designationn, institutee, contactt, bioo, addresss, labb } =
-    location.state;
+  const {
+    namee,
+    designationn,
+    institutee,
+    contactt,
+    bioo,
+    addresss,
+    labb,
+  } = location.state;
   const [about, setAbout] = useState(true);
   const [labs, setLabs] = useState(false);
   const [network, setNetwork] = useState(false);
@@ -26,9 +33,10 @@ export const Template2Edit = ({ props }) => {
   const [name, setName] = useState(namee);
   const [institute, setInstitute] = useState(institutee);
   const [designation, setDesignation] = useState(designationn);
+  const [userImage, setUserImage] = useState("");
 
   const handleData = async () => {
-    userBio(designation, institute, name);
+    userBio(designation, institute, name, userImage);
     navigate("/template2");
   };
 
@@ -93,7 +101,16 @@ export const Template2Edit = ({ props }) => {
           </div>
         </div>
         <div className="template2PreviewContainer">
-          <div className="profileTemplate2PreviewImg"></div>
+          <div className="profileTemplate2PreviewImg">
+            {" "}
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => {
+                setUserImage(e.target.files[0]);
+              }}
+            />
+          </div>
           <div className="profileTemplate2PreviewData">
             <p className="profile2PreviewHeading">
               <input

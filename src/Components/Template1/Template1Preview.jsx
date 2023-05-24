@@ -33,6 +33,7 @@ export const Template1Preview = () => {
         bioo: data?.biography,
         labb: data?.lab_details,
         addresss: data?.postal_address,
+        collorr: data?.bg_color ? data?.bg_color : "#fffff",
       },
     });
   };
@@ -75,7 +76,10 @@ export const Template1Preview = () => {
   return (
     <>
       <NavBar />
-      <div className={view ? "blurr" : "bgGradient"}>
+      <div
+        className={view ? "blurr" : "bgGradient"}
+        style={{ background: data?.bg_color }}
+      >
         <p
           style={{
             fontSize: "2rem",
@@ -112,7 +116,13 @@ export const Template1Preview = () => {
                   <p className="data1Info">{data?.phone}</p>
                 </div>
               </div>
-              <div className="child1img"></div>
+              <div className="child1img">
+                <img
+                  src={data?.image}
+                  alt=""
+                  style={{ width: "100%", height: "100%", borderRadius: "50%" }}
+                />
+              </div>
             </div>
             {/* Biography */}
             <div className="parentInfo">

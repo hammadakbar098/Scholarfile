@@ -94,7 +94,13 @@ export const Template2Preview = () => {
           </div>
         </div>
         <div className="template2PreviewContainer">
-          <div className="profileTemplate2PreviewImg"></div>
+          <div className="profileTemplate2PreviewImg">
+            <img
+              src={data?.image}
+              alt=""
+              style={{ width: "100%", height: "100%", borderRadius: "50%" }}
+            />
+          </div>
           <div className="profileTemplate2PreviewData">
             <p className="profile2PreviewHeading">
               {data?.first_name} {data?.last_name}

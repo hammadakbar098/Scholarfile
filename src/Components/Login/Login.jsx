@@ -27,6 +27,8 @@ const Login = () => {
         navigate("/template1");
       } else if (data?.data.template_type === "2") {
         navigate("/template2");
+      } else if (data?.data.template_type === "0") {
+        navigate("/template-select");
       }
     }
     if (data?.error === true) {

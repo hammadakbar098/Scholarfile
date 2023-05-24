@@ -34,7 +34,7 @@ export const TemplateSelection = () => {
                 <div
                   style={{ cursor: "pointer" }}
                   onClick={() => {
-                    navigate("/template1-select-preivew");
+                    navigate("/template1");
                   }}
                 >
                   <AiOutlineEye color="white" size={30} />
@@ -55,7 +55,7 @@ export const TemplateSelection = () => {
                 <div
                   style={{ cursor: "pointer" }}
                   onClick={() => {
-                    navigate("/template2-select-preivew");
+                    navigate("/template2");
                   }}
                 >
                   <AiOutlineEye color="white" size={30} />

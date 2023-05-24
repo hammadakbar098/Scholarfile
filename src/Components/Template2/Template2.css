@@ -13,8 +13,12 @@
 .profileTemplate2PreviewImg {
   width: 120px;
   height: 120px;
-  background-color: rebeccapurple;
+  /* background-color: rebeccapurple; */
   border-radius: 50%;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profileTemplate2PreviewData {

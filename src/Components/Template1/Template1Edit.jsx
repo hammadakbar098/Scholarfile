@@ -17,11 +17,19 @@ export const Template1Edit = ({ props }) => {
   const navigate = useNavigate();
 
   const location = useLocation();
-  const { namee, designationn, institutee, contactt, bioo, addresss, labb } =
-    location.state;
+  const {
+    namee,
+    designationn,
+    institutee,
+    contactt,
+    bioo,
+    addresss,
+    labb,
+    collorr,
+  } = location.state;
   // UseState for variables
   const [collabrators, setCollabrators] = useState([]);
-  const [color, setColor] = useState("#fffff");
+  const [color, setColor] = useState(collorr);
   const [name, setName] = useState(namee);
   const [contact, setContact] = useState(contactt);
   const [institute, setInstitute] = useState(institutee);
@@ -34,6 +42,7 @@ export const Template1Edit = ({ props }) => {
   const [showAdd, setShowAdd] = useState(false);
   const [memberName, setMemeberName] = useState("");
   const [uploadData, setUploadData] = useState(false);
+  const [userImage, setUserImage] = useState("");
   // <a>Edu information</a>
   // <a>Academic exp</a>
   // <a>Award</a>
@@ -176,7 +185,17 @@ export const Template1Edit = ({ props }) => {
     apiCall();
   }, []);
   const handleSave = () => {
-    profileData(bio, lab, address, designation, institute, contact, name);
+    profileData(
+      bio,
+      lab,
+      address,
+      designation,
+      institute,
+      contact,
+      name,
+      color,
+      userImage
+    );
     console.log(bio, lab, address, designation, institute, contact, name);
     navigate("/template1");
   };
@@ -267,7 +286,22 @@ export const Template1Edit = ({ props }) => {
                   </p>
                 </div>
               </div>
-              <div className="child1img"></div>
+              <div
+                className="child1img"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => {
+                    setUserImage(e.target.files[0]);
+                  }}
+                />
+              </div>
             </div>
             {/* Biography */}
             <div className="parentInfo">

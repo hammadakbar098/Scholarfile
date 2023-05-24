@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "https://saman-fyp-production.up.railway.app/";
+const baseURL = "https://saman-fyp-production-31c0.up.railway.app/";
 
 const getToken = async () => {
   try {
@@ -102,6 +102,50 @@ export const login = async (email, password) => {
 };
 
 // Getting profile data Biography, Lab details and postal address
+// export const profileData = async (
+//   bio,
+//   lab,
+//   address,
+//   designation,
+//   institute,
+//   contact,
+//   name,
+//   color
+// ) => {
+
+//   var apiResponse;
+//   var data = {
+//     biography: bio,
+//     lab_details: lab,
+//     postal_address: address,
+//     designation: designation,
+//     institute: institute,
+//     phone: contact,
+//     first_name: name,
+//     bg_color: color,
+//   };
+
+//   var config = {
+//     method: "patch",
+//     maxBodyLength: Infinity,
+//     url: `${baseURL}users/profile/`,
+//     headers: {
+//       Authorization: await getToken(),
+//     },
+//     data: data,
+//   };
+
+//   await axios(config)
+//     .then(function (response) {
+//       console.log(JSON.stringify(response.data));
+//       apiResponse = response.data;
+//     })
+//     .catch(function (error) {
+//       console.log(error);
+//     });
+//   return apiResponse;
+// };
+
 export const profileData = async (
   bio,
   lab,
@@ -109,18 +153,27 @@ export const profileData = async (
   designation,
   institute,
   contact,
-  name
+  name,
+  color,
+  imageFile
 ) => {
   var apiResponse;
-  var data = {
-    biography: bio,
-    lab_details: lab,
-    postal_address: address,
-    designation: designation,
-    institute: institute,
-    phone: contact,
-    first_name: name,
-  };
+
+  // Create a FormData object
+  var formData = new FormData();
+
+  // Append the image file to the FormData object
+  formData.append("image", imageFile);
+
+  // Append other data to the FormData object
+  formData.append("biography", bio);
+  formData.append("lab_details", lab);
+  formData.append("postal_address", address);
+  formData.append("designation", designation);
+  formData.append("institute", institute);
+  formData.append("phone", contact);
+  formData.append("first_name", name);
+  formData.append("bg_color", color);
 
   var config = {
     method: "patch",
@@ -128,8 +181,9 @@ export const profileData = async (
     url: `${baseURL}users/profile/`,
     headers: {
       Authorization: await getToken(),
+      "Content-Type": "multipart/form-data", // Set the Content-Type header for FormData
     },
-    data: data,
+    data: formData, // Use the FormData object as the data
   };
 
   await axios(config)
@@ -140,6 +194,7 @@ export const profileData = async (
     .catch(function (error) {
       console.log(error);
     });
+
   return apiResponse;
 };
 
@@ -198,13 +253,19 @@ export const userDetail = async (bio, address, contact) => {
     });
   return apiResponse;
 };
-export const userBio = async (designation, institute, name) => {
+export const userBio = async (designation, institute, name, imageFile) => {
   var apiResponse;
-  var data = {
-    designation: designation,
-    institute: institute,
-    first_name: name,
-  };
+
+  // Create a FormData object
+  var formData = new FormData();
+
+  // Append the image file to the FormData object
+  formData.append("image", imageFile);
+
+  // Append other data to the FormData object
+  formData.append("designation", designation);
+  formData.append("institute", institute);
+  formData.append("first_name", name);
 
   var config = {
     method: "patch",
@@ -212,8 +273,9 @@ export const userBio = async (designation, institute, name) => {
     url: `${baseURL}users/profile/`,
     headers: {
       Authorization: await getToken(),
+      "Content-Type": "multipart/form-data", // Set the Content-Type header for FormData
     },
-    data: data,
+    data: formData, // Use the FormData object as the data
   };
 
   await axios(config)
@@ -224,6 +286,7 @@ export const userBio = async (designation, institute, name) => {
     .catch(function (error) {
       console.log(error);
     });
+
   return apiResponse;
 };
 
@@ -334,7 +397,7 @@ export const getCollabrators = async () => {
 };
 
 export const selectTemplateType = async (type) => {
-  var data = { user_id: await getTemplateSetId(), template_type: type };
+  var data = { user_id: await getuserId(), template_type: type };
 
   var config = {
     method: "post",
