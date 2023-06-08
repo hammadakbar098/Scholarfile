@@ -4,6 +4,7 @@ import "./Login.css";
 // API call
 import { login } from "../../axios/Axios";
 import { useNavigate } from "react-router-dom";
+import { bgImg } from "../../Assets";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="login_main">
+      <div className="login_main" style={{ backgroundImage: bgImg }}>
         <h1 className="login_text">Scholar File</h1>
         <div className="login_container">
           <div className="input_box">

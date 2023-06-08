@@ -17,7 +17,11 @@ body {
 }
 
 .login_main {
-  background-color: var(--blue-color);
+  position: relative;
+  background-image: url("./../../Assets/scott-graham-5fNmWej4tAA-unsplash\ \(1\).jpg");
+  background-size: cover;
+  background-position: center;
+  /* background-color: var(--blue-color); */
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -26,17 +30,27 @@ body {
   justify-content: center;
   padding: 20px;
 }
-
+.login_main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Adjust the opacity as needed */
+}
 .login_text {
   text-align: center;
   font-family: var(--roboto-font);
   font-weight: 900;
   font-size: 3rem;
-  color: var(--moredarkblue-color);
+  color: var(--input-bg-color);
   margin-bottom: 2rem;
+  z-index: 99999999;
 }
 
 .login_container {
+  z-index: 99999999;
   display: flex;
   flex-direction: column;
   align-items: center;
